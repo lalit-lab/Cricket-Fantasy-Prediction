@@ -4,7 +4,10 @@ def form_index(recent_runs, career_average):
     return recent_runs / career_average if career_average > 0 else 0
 
 def venue_impact(player_avg_at_venue, overall_avg):
+    if overall_avg == 0:
+        return 0  # Avoid division by zero
     return (player_avg_at_venue - overall_avg) / overall_avg * 100
+
 
 def h2h_performance(player_avg_vs_team, overall_avg):
     return (player_avg_vs_team - overall_avg) / overall_avg * 100
